@@ -78,9 +78,21 @@ module.exports = (robot) ->
           when "SUCCESS"       then HUBOT_JENKINS_COLOR_SUCCESS
           else                      HUBOT_JENKINS_COLOR_DEFAULT
 
+        params = data.build.parameters
+
+        if params.environment
+          payload.content.fields.push
+            title: "Environment"
+            value: params.environment
+            short: true
+          payload.content.fields.push
+            title: "Branch"
+            value: params.branch
+            short: true
+
       when "STARTED"
         status = data.build.phase
-        color = "#e9f1ea"
+        color = "#ffe094"
 
         payload.content.fields.push
           title: "Build #"
@@ -89,31 +101,14 @@ module.exports = (robot) ->
 
         params = data.build.parameters
 
-        if params and params.ghprbPullId
+        if params.environment
           payload.content.fields.push
-            title: "Source branch"
-            value: params.ghprbSourceBranch
-            short: true
-          payload.content.fields.push
-            title: "Target branch"
-            value: params.ghprbTargetBranch
-            short: true
-          payload.content.fields.push
-            title: "Pull request"
-            value: "#{params.ghprbPullId}: #{params.ghprbPullTitle}"
-            short: true
-          payload.content.fields.push
-            title: "URL"
-            value: params.ghprbPullLink
-            short: true
-        else if data.build.scm.commit
-          payload.content.fields.push
-            title: "Commit SHA1"
-            value: data.build.scm.commit
+            title: "Environment"
+            value: params.environment
             short: true
           payload.content.fields.push
             title: "Branch"
-            value: data.build.scm.branch
+            value: params.branch
             short: true
 
     payload.content.color    = color
