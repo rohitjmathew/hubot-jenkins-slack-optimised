@@ -110,8 +110,7 @@ module.exports = (robot) ->
           short: true
 
         params = data.build.parameters
-
-DBKRRMQ6B
+        
         if params.environment
           payload.content.fields.push
             title: "Environment"
