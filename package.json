@@ -1,7 +1,7 @@
 {
   "name": "hubot-jenkins-slack-optimised",
   "description": "Jenkins notifier adapted for Slack",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Rohit Mathew",
   "license": "MIT",
   "keywords": [
