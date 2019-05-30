@@ -110,7 +110,7 @@ module.exports = (robot) ->
           short: true
 
         params = data.build.parameters
-        
+
         if params.environment
           payload.content.fields.push
             title: "Environment"
@@ -121,11 +121,6 @@ module.exports = (robot) ->
             value: params.branch
             short: true
         
-        payload.content.fields.push
-          title: "Testers"
-          value: "<@DBKRRMQ6B>"
-          short: true
-
     payload.content.color    = color
     payload.content.pretext  = "Jenkins #{data.name} #{status} #{data.build.full_url}"
     payload.content.fallback = payload.content.pretext
