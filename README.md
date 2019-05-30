@@ -5,7 +5,7 @@ Respond to [Jenkins][jenkins] notifications in a format appropiated for [Slack][
 In hubot project repository, run:
 
 ```
-npm install hubot-jenkins-slack --save
+npm install hubot-jenkins-slack-optimised --save
 ```
 
 Then add `hubot-jenkins-slack-optimised` to your `external-scripts.json`:

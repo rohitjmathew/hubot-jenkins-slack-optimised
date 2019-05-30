@@ -44,6 +44,8 @@ module.exports = (robot) ->
 
     data = req.body
 
+    robot.logger.info "Data from jenkins:", data
+
     res.status(202).end()
 
     return if data.build.phase == "COMPLETED"
