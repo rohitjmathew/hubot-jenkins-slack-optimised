@@ -70,6 +70,11 @@ module.exports = (robot) ->
           value: data.build.status
           short: true
 
+        payload.content.fields.push
+          title: "Job"
+          value: data.display_name
+          short: true
+
         color = switch data.build.status
           when "ABORTED"       then HUBOT_JENKINS_COLOR_ABORTED
           when "FAILURE"       then HUBOT_JENKINS_COLOR_FAILURE
@@ -93,6 +98,11 @@ module.exports = (robot) ->
       when "STARTED"
         status = data.build.phase
         color = "#ffe094"
+
+        payload.content.fields.push
+          title: "Job"
+          value: data.display_name
+          short: true
 
         payload.content.fields.push
           title: "Build #"
