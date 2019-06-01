@@ -1,7 +1,7 @@
 {
   "name": "hubot-jenkins-slack-optimised",
   "description": "Jenkins notifier adapted for Slack",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Rohit Mathew",
   "license": "MIT",
   "keywords": [
@@ -25,10 +25,7 @@
   "engines": {
     "node": "*"
   },
-  "bugs": {
-    "url": "https://github.com/rohitjmathew/hubot-jenkins-slack/issues"
-  },
-  "homepage": "https://github.com/rohitjmathew/hubot-jenkins-slack",
+  "homepage": "https://github.com/rohitjmathew/hubot-jenkins-slack-optimised/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
